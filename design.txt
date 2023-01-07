@@ -1,0 +1,7 @@
+
+function call to populate cron jobs
+	edit each line to look like - cron_interval monitor job_id original_job
+	
+
+function call for each job run
+
