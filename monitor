@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+populate ()
+{
+	local crontabs
+
+	# check user cron
+	get_crontabs
+	process_crontabs
+
+	# check root cron
+	get_crontabs root
+	process_crontabs
+}
+
+
+get_crontabs ()
+{	
+	if [ "$1" = 'root' ]; then
+		crontabs=$(sudo crontab -l)
+	else
+		crontabs=$(crontab -l)
+	fi
+}
+
+
+
+process_crontabs ()
+{
+	local IFS=$'\n'
+	for i in $crontabs; do
+		echo $i
+
+		# check for no crontab message
+		# check for command
+	
+	done
+
+}
+
+
+
+
